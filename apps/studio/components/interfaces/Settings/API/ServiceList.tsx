@@ -51,7 +51,7 @@ const ServiceList = () => {
     isCustomDomainActive && state.selectedDatabaseId === projectRef
       ? `https://${customDomainData.customDomain.hostname}`
       : loadBalancerSelected
-        ? loadBalancers?.[0].endpoint ?? ''
+        ? (loadBalancers?.[0].endpoint ?? '')
         : selectedDatabase?.restUrl
 
   useEffect(() => {

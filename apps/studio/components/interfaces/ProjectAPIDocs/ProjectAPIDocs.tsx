@@ -47,7 +47,7 @@ const ProjectAPIDocs = () => {
 
   const { anonKey } = getAPIKeys(settings)
   const apikey = showKeys
-    ? anonKey?.api_key ?? 'SUPABASE_CLIENT_ANON_KEY'
+    ? (anonKey?.api_key ?? 'SUPABASE_CLIENT_ANON_KEY')
     : 'SUPABASE_CLIENT_ANON_KEY'
   const protocol = settings?.app_config?.protocol ?? 'https'
   const hostEndpoint = settings?.app_config?.endpoint

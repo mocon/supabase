@@ -101,7 +101,7 @@ export const DatabaseConnectionString = ({ appearance }: DatabaseConnectionStrin
   const connectionInfo = pluckObjectFields(selectedDatabase || emptyState, DB_FIELDS)
   const connectionTld =
     projectDetails?.restUrl !== undefined
-      ? new URL(projectDetails?.restUrl ?? '').hostname.split('.').pop() ?? 'co'
+      ? (new URL(projectDetails?.restUrl ?? '').hostname.split('.').pop() ?? 'co')
       : 'co'
 
   const handleCopy = (id: string) => {

@@ -22,10 +22,10 @@ const Migrations = () => {
   })
   const migrations =
     search.length === 0
-      ? data ?? []
-      : data?.filter(
+      ? (data ?? [])
+      : (data?.filter(
           (migration) => migration.version.includes(search) || migration.name?.includes(search)
-        ) ?? []
+        ) ?? [])
 
   return (
     <>

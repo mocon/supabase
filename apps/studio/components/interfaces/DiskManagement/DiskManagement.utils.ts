@@ -117,7 +117,7 @@ export const calculateIOPSPrice = ({
       oldStorageType === 'gp3'
         ? (oldProvisionedIOPS - DISK_LIMITS[oldStorageType].includedIops) *
           DISK_PRICING[oldStorageType].iops
-        : oldProvisionedIOPS * DISK_PRICING[oldStorageType]?.iops ?? 0
+        : (oldProvisionedIOPS * DISK_PRICING[oldStorageType]?.iops ?? 0)
     const newPrice = newProvisionedIOPS * DISK_PRICING[newStorageType]?.iops ?? 0
     return {
       oldPrice: (oldPrice * (1 + numReplicas)).toFixed(2),

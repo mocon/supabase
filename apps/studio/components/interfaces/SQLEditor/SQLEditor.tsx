@@ -172,7 +172,7 @@ export const SQLEditor = () => {
           const editor = editorRef.current
           const monaco = monacoRef.current
 
-          const startLineNumber = hasSelection ? editor?.getSelection()?.startLineNumber ?? 0 : 0
+          const startLineNumber = hasSelection ? (editor?.getSelection()?.startLineNumber ?? 0) : 0
 
           const formattedError = error.formattedError ?? ''
           const lineError = formattedError.slice(formattedError.indexOf('LINE'))
@@ -228,7 +228,7 @@ export const SQLEditor = () => {
       const selection = editor.getSelection()
       const selectedValue = selection ? editor.getModel()?.getValueInRange(selection) : undefined
       const sql = snippet
-        ? (selectedValue || editorRef.current?.getValue()) ?? snippet.snippet.content.sql
+        ? ((selectedValue || editorRef.current?.getValue()) ?? snippet.snippet.content.sql)
         : selectedValue || editorRef.current?.getValue()
       formatQuery(
         {
@@ -268,7 +268,7 @@ export const SQLEditor = () => {
         const selectedValue = selection ? editor.getModel()?.getValueInRange(selection) : undefined
 
         const sql = snippet
-          ? (selectedValue || editorRef.current?.getValue()) ?? snippet.snippet.content.sql
+          ? ((selectedValue || editorRef.current?.getValue()) ?? snippet.snippet.content.sql)
           : selectedValue || editorRef.current?.getValue()
 
         let queryHasIssues = false

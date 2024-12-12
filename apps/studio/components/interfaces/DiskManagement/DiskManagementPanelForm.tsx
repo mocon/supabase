@@ -196,7 +196,7 @@ export function DiskManagementPanelForm() {
       ? Math.min(500 * watchedTotalSize, IOPS_RANGE[DiskType.GP3].max)
       : Math.min(1000 * watchedTotalSize, IOPS_RANGE[DiskType.IO2].max)
   const minThroughput =
-    watchedStorageType === 'gp3' ? THROUGHPUT_RANGE[watchedStorageType]?.min ?? 0 : 0
+    watchedStorageType === 'gp3' ? (THROUGHPUT_RANGE[watchedStorageType]?.min ?? 0) : 0
   const maxThroughput =
     watchedStorageType === 'gp3'
       ? Math.min(0.25 * watchedIOPS, THROUGHPUT_RANGE[DiskType.GP3].max)

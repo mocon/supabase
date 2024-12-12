@@ -42,7 +42,11 @@ const CopyButton = ({
         props.className
       )}
       icon={
-        showCopied ? <Check strokeWidth={2} className="text-brand" /> : props.icon ?? <Clipboard />
+        showCopied ? (
+          <Check strokeWidth={2} className="text-brand" />
+        ) : (
+          (props.icon ?? <Clipboard />)
+        )
       }
     >
       {!iconOnly && <>{children ?? (showCopied ? copiedLabel : copyLabel)}</>}

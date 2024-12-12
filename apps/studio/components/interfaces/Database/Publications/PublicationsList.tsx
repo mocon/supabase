@@ -53,7 +53,7 @@ const PublicationsList = ({ onSelectPublication = noop }: PublicationsListProps)
   ]
   const publications =
     filterString.length === 0
-      ? data ?? []
+      ? (data ?? [])
       : (data ?? []).filter((publication) => publication.name.includes(filterString))
 
   const [toggleListenEventValue, setToggleListenEventValue] = useState<{
