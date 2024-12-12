@@ -158,7 +158,7 @@ function useLogsPreview({
     }
   )
 
-  const newCount = isResponseOk(countData) ? (countData.result?.[0]?.count ?? 0) : 0
+  const newCount = isResponseOk(countData) ? countData.result?.[0]?.count ?? 0 : 0
 
   // chart data
 

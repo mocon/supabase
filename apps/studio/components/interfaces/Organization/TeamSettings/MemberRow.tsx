@@ -146,7 +146,7 @@ export const MemberRow = ({ member }: MemberRowProps) => {
             const roleName = (role?.name ?? '').split('_')[0]
             const projectsApplied =
               role?.project_ids === null
-                ? (orgProjects?.map((p) => p.name) ?? [])
+                ? orgProjects?.map((p) => p.name) ?? []
                 : (role?.project_ids ?? [])
                     .map((id) => {
                       return orgProjects?.find((p) => p.id === id)?.name ?? ''

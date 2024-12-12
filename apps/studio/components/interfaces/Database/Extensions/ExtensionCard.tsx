@@ -49,7 +49,7 @@ const ExtensionCard = ({ extension }: ExtensionCardProps) => {
     ? siteUrl === 'http://localhost:8082'
       ? `http://localhost:3001/docs${extensions.find((item) => item.name === extension.name)?.link}`
       : `https://supabase.com/docs${extensions.find((item) => item.name === extension.name)?.link}`
-    : (extensions.find((item: any) => item.name === extension.name)?.link ?? undefined)
+    : extensions.find((item: any) => item.name === extension.name)?.link ?? undefined
 
   const { mutate: disableExtension, isLoading: isDisabling } = useDatabaseExtensionDisableMutation({
     onSuccess: () => {

@@ -221,7 +221,7 @@ export const UserOverview = ({ user, onDeleteSuccess }: UserOverviewProps) => {
                 ? 'email'
                 : provider.name === 'linkedin'
                   ? 'LinkedIn'
-                  : (providerMeta?.title ?? provider.name)
+                  : providerMeta?.title ?? provider.name
             const isActive = data?.[enabledProperty as keyof typeof data] ?? false
 
             return (

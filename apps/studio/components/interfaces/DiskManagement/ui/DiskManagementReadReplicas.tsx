@@ -204,13 +204,13 @@ export const DiskManagementThroughputReadReplicas = ({
 
   const beforePrice =
     oldStorageType === DiskType.GP3
-      ? ((oldThroughput - DISK_LIMITS[oldStorageType].includedThroughput) *
-          DISK_PRICING[oldStorageType]?.throughput ?? 0)
+      ? (oldThroughput - DISK_LIMITS[oldStorageType].includedThroughput) *
+          DISK_PRICING[oldStorageType]?.throughput ?? 0
       : 0
   const afterPrice =
     newStorageType === DiskType.GP3
-      ? ((newThroughput - DISK_LIMITS[newStorageType].includedThroughput) *
-          DISK_PRICING[newStorageType]?.throughput ?? 0)
+      ? (newThroughput - DISK_LIMITS[newStorageType].includedThroughput) *
+          DISK_PRICING[newStorageType]?.throughput ?? 0
       : 0
 
   if (readReplicas.length === 0) return null

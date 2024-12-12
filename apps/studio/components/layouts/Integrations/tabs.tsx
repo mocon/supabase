@@ -41,7 +41,7 @@ export const IntegrationTabs = ({ scroll, isSticky }: IntegrationTabsProps) => {
   const installedIntegration = installedIntegrations?.find((i) => i.id === id)
 
   const tabs = installedIntegration
-    ? (integration?.navigation ?? [])
+    ? integration?.navigation ?? []
     : (integration?.navigation ?? []).filter((tab) => tab.route === 'overview')
 
   if (!integration) return null

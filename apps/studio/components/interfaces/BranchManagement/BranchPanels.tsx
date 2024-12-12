@@ -203,7 +203,7 @@ export const BranchRow = ({
         {isActive && <Badge>Current</Badge>}
         <BranchStatusBadge
           status={
-            branch.status === 'CREATING_PROJECT' ? (data?.status ?? branch.status) : branch.status
+            branch.status === 'CREATING_PROJECT' ? data?.status ?? branch.status : branch.status
           }
         />
         <p className="text-xs text-foreground-lighter">

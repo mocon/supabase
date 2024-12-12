@@ -58,7 +58,7 @@ const ColumnList = ({
 
   const columns =
     (filterString.length === 0
-      ? (selectedTable?.columns ?? [])
+      ? selectedTable?.columns ?? []
       : selectedTable?.columns?.filter((column: any) => column.name.includes(filterString))) ?? []
 
   const isLocked = PROTECTED_SCHEMAS.includes(selectedTable?.schema ?? '')
